@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Database</title>
+    <link href="../static/css/search.css" rel="stylesheet"/>
+    <link href="../static/css/title.css" rel="stylesheet"/>
+    <script src="../static/js/jquery-1.11.1.min.js"></script>
+    <script src="../static/js/zui.chart.js"></script>
+    <script src="../static/js/zui.colorset.js"></script>
+</head>
+
+
+<body>
+<div id="title1"><img src="../static/p2.png" width=7% />
+    <h1 class="row skew-title">
+        <span>U</span><span>S</span><span>E</span><span CLASS="LAST">D</span>
+        <span>C</span><span>A</span><span CLASS="LAST">R</span>
+        <span class="alt">P</span><span class="alt">R</span><span class="alt">I</span><span class="alt">C</span><span class="alt last">E</span>
+        <span>E</span><span>V</span><span>A</span><span>L</span><span>U</span><span>A</span><span>T</span><span>I</span><span>O</span><span CLASS="LAST">N</span>
+        <span class="alt">S</span><span class="alt">Y</span><span class="alt">S</span><span class="alt">T</span><span class="alt">E</span><span class="alt last">M</span>
+  </h1>
+    <div id="time" class="time"></div>
+<div id="updated">LAST 5 MINUTES: 9 CARS UPDATED</div>
+
+</div>
+
+<div id="left1">
+    <form action="" method="post" class="basic-grey">
+        <h1>Please select Car attributes</h1>
+
+        <label>
+            <span class ='addRedStar'>Make:</span>
+<!-- <input type="text" name="makeinput" list="makeid" class="inputid">
+   <datalist id="makeid" style="display:none;" >-->
+           <select id="makeid" name="makeid" required>
+                <!--<option selected="" value="">All Makes</option>-->
+                <option value="AC">AC</option>
+                <option value="Acura">Acura</option>
+                <option value="Alfa Romeo">Alfa Romeo</option>
+                <option value="Am General">Am General</option>
+                <option value="American Motors">American Motors</option>
+                <option value="Aston Martin">Aston Martin</option>
+                <option value="Audi">Audi</option>
+                <option value="Austin-Healey">Austin-Healey</option>
+                <option value="BMW">BMW</option>
+                <option value="Bentley">Bentley</option>
+                <option value="Buick">Buick</option>
+                <option value="Cadillac">Cadillac</option>
+                <option value="Chevrolet">Chevrolet</option>
+                <option value="Chrysler">Chrysler</option>
+                <option value="Daewoo">Daewoo</option>
+                <option value="Datsun">Datsun</option>
+                <option value="DeTomaso">DeTomaso</option>
+                <option value="Delorean">Delorean</option>
+                <option value="Desoto">Desoto</option>
+                <option value="Dodge">Dodge</option>
+                <option value="Eagle">Eagle</option>
+                <option value="FIAT">FIAT</option>
+                <option value="Ferrari">Ferrari</option>
+                <option value="Fisker">Fisker</option>
+                <option value="Ford">Ford</option>
+                <option value="GMC">GMC</option>
+                <option value="Genesis">Genesis</option>
+                <option value="Geo">Geo</option>
+                <option value="Honda">Honda</option>
+                <option value="Hummer">Hummer</option>
+                <option value="Hyundai">Hyundai</option>
+                <option value="INFINITI">INFINITI</option>
+                <option value="International">International</option>
+                <option value="Isuzu">Isuzu</option>
+                <option value="Jaguar">Jaguar</option>
+                <option value="Jeep">Jeep</option>
+                <option value="Jensen">Jensen</option>
+                <option value="Karma">Karma</option>
+                <option value="Kia">Kia</option>
+                <option value="Lamborghini">Lamborghini</option>
+                <option value="Land Rover">Land Rover</option>
+                <option value="Lexus">Lexus</option>
+                <option value="Lincoln">Lincoln</option>
+                <option value="Lotus">Lotus</option>
+                <option value="MG">MG</option>
+                <option value="MINI">MINI</option>
+                <option value="Maserati">Maserati</option>
+                <option value="Maybach">Maybach</option>
+                <option value="Mazda">Mazda</option>
+                <option value="McLaren">McLaren</option>
+                <option value="Mercedes-Benz">Mercedes-Benz</option>
+                <option value="Mercury">Mercury</option>
+                <option value="Mitsubishi">Mitsubishi</option>
+                <option value="Nash">Nash</option>
+                <option value="Nissan">Nissan</option>
+                <option value="Oldsmobile">Oldsmobile</option>
+                <option value="Opel">Opel</option>
+                <option value="Packard">Packard</option>
+                <option value="Panoz">Panoz</option>
+                <option value="Peugeot">Peugeot</option>
+                <option value="Plymouth">Plymouth</option>
+                <option value="Pontiac">Pontiac</option>
+                <option value="Porsche">Porsche</option>
+                <option value="RAM">RAM</option>
+                <option value="Rolls-Royce">Rolls-Royce</option>
+                <option value="Saab">Saab</option>
+                <option value="Saturn">Saturn</option>
+                <option value="Scion">Scion</option>
+                <option value="Smart">Smart</option>
+                <option value="Studebaker">Studebaker</option>
+                <option value="Subaru">Subaru</option>
+                <option value="Sunbeam">Sunbeam</option>
+                <option value="Suzuki">Suzuki</option>
+                <option value="Tesla">Tesla</option>
+                <option value="Toyota">Toyota</option>
+                <option value="Triumph">Triumph</option>
+                <option value="Volkswagen">Volkswagen</option>
+                <option value="Volvo">Volvo</option>
+                <option value="Willys">Willys</option>
+            </select>
+                <!--</datalist>-->
+        </label>
+
+        <label>
+            <span class ='addRedStar'>Model:</span>
+<!-- <input type="text" name="modelinput" list="modelid" class="inputid">
+  <datalist id="modelid" style="display:none;" >-->
+            <select id="modelid" name="modelid">
+                <!--<option selected="" value="0">All Models</option>-->
+                <option value="Shellby Cobra">Shellby Cobra</option>
+
+     </select>
+                <!--</datalist>-->
+        </label>
+
+        <label>
+            <span>Fuel Type:</span>
+            <select id="fueltype" name="fueltype">
+                <option selected="" value="Gasoline">Gasoline</option>
+                <option value="Hybrid">Hybrid</option>
+                <option value="Electric">Electric</option>
+                <option value="E85 Flex Fuel">E85 Flex Fuel</option>
+                <option value="Diesel">Diesel</option>
+            </select>
+        </label>
+
+        <label>
+            <span>Drive Train:</span>
+            <select id="drivetrain" name="drivetrain">
+                <option selected="" value="0">All Drive Trains</option>
+                <option value="AWD">AWD</option>
+                <option value="RWD">RWD</option>
+                <option value="FWD">FWD</option>
+                <option value="4WD">4WD</option>
+                <option value="Other">Other</option>
+            </select>
+        </label>
+
+        <label>
+            <span>Transmission:</span>
+            <select id="transmission" name="transmission">
+                <option selected="" value="0">All Transmissions</option>
+                <option value="<=6-Speed AUTOMATIC"><=6-Speed AUTOMATIC</option>
+                <option value=">6-Speed AUTOMATIC">>6-Speed AUTOMATIC</option>
+                <option value="Other">Other</option>
+            </select>
+        </label>
+
+        <label>
+            <span>Exterior Color:</span>
+            <select id="colorid" name="colorid">
+                <option selected="" value="0">All Colors</option>
+                <option value="Beige">Beige</option>
+                <option value="Black">Black</option>
+                <option value="Blue">Blue</option>
+                <option value="Brown">Brown</option>
+                <option value="Gold">Gold</option>
+                <option value="Gray">Gray</option>
+                <option value="Green">Green</option>
+                <option value="Orange">Orange</option>
+                <option value="Purple">Purple</option>
+                <option value="Red">Red</option>
+                <option value="Sliver">Sliver</option>
+                <option value="White">White</option>
+                <option value="Other">Other</option>
+            </select>
+        </label>
+    </form>
+
+    <form action="" method="post" class="basic-grey">
+        <h2>Predict Car Price
+            <span>Please enter the time and mileage of your car.</span>
+        </h2>
+
+        <label>
+            <span>License Time:</span>
+            <input id="pltime" type="text" name="pltime" oninput = "value=value.replace(/[^\d]/g,'')" class = "input1" placeholder="Please enter license time(Year)"/>
+        </label>
+
+        <label>
+            <span>Mileage:</span>
+            <input id="pm" type="text" name="pm" oninput = "value=value.replace(/[^\d]/g,'')" class = "input1" placeholder="Please enter mileage(miles)"/>
+        </label>
+
+        <label>
+            <span>&nbsp;</span>
+            <input id="predict" type="button" class="button" value="Predict"/>
+        </label>
+    </form>
+
+
+    <form action="" method="post" class="basic-grey">
+        <h3>Search Nearest Cars on Sale
+            <span>Please select cars information you are searching.</span>
+        </h3>
+
+        <label>
+            <span>Min Year:</span>
+            <select id="minsyear" name="minsyear">
+                <option selected="" value="0">No Min Year</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+                <option value="2013">2013</option>
+                <option value="2012">2012</option>
+                <option value="2011">2011</option>
+                <option value="2010">2010</option>
+                <option value="2009">2009</option>
+                <option value="2008">2008</option>
+                <option value="2007">2007</option>
+                <option value="2006">2006</option>
+                <option value="2005">2005</option>
+                <option value="2004">2004</option>
+                <option value="2003">2003</option>
+                <option value="2002">2002</option>
+                <option value="2001">2001</option>
+                <option value="2000">2000</option>
+            </select>
+        </label>
+
+        <label>
+            <span>Max Year:</span>
+            <select id="maxsyear" name="maxsyear">
+                <option selected="" value="0">No Max Year</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+                <option value="2013">2013</option>
+                <option value="2012">2012</option>
+                <option value="2011">2011</option>
+                <option value="2010">2010</option>
+                <option value="2009">2009</option>
+                <option value="2008">2008</option>
+                <option value="2007">2007</option>
+                <option value="2006">2006</option>
+                <option value="2005">2005</option>
+                <option value="2004">2004</option>
+                <option value="2003">2003</option>
+                <option value="2002">2002</option>
+                <option value="2001">2001</option>
+                <option value="2000">2000</option>
+            </select>
+        </label>
+
+        <label>
+            <span>Maximum Price:</span>
+            <select id="priceMax" name="priceMax">
+                <option selected="" value="0">No Max Price</option>
+                <option value="2000">$2,000</option>
+                <option value="4000">$4,000</option>
+                <option value="6000">$6,000</option>
+                <option value="8000">$8,000</option>
+                <option value="10000">$10,000</option>
+                <option value="15000">$15,000</option>
+                <option value="20000">$20,000</option>
+                <option value="25000">$25,000</option>
+                <option value="30000">$30,000</option>
+                <option value="35000">$35,000</option>
+                <option value="40000">$40,000</option>
+                <option value="45000">$45,000</option>
+                <option value="50000">$50,000</option>
+                <option value="60000">$60,000</option>
+                <option value="70000">$70,000</option>
+                <option value="80000">$80,000</option>
+                <option value="90000">$90,000</option>
+                <option value="100000">$100,000</option>
+                <option value="125000">$125,000</option>
+                <option value="150000">$150,000</option>
+                <option value="175000">$175,000</option>
+            </select>
+        </label>
+
+        <label>
+            <span>Distance:</span>
+            <select id="radius" name="radius">
+                <option value="10">10 Miles from</option>
+                <option selected="" value="20">20 Miles from</option>
+                <option value="50">50 Miles from</option>
+                <option value="75">75 Miles from</option>
+                <option value="100">100 Miles from</option>
+                <option value="200">200 Miles from</option>
+                <option value="250">250 Miles from</option>
+                <option value="99999">All Miles from</option>
+            </select>
+        </label>
+
+        <label>
+            <span>Mileage:</span>
+            <select id="sm" name="sm">
+                <option selected="" value="0">No Mileage Restriction</option>
+                <option value="30000">less than 30,000</option>
+                <option value="50000">30,000-50,000</option>
+                <option value="100000">50,000-100,000</option>
+                <option value="150000">100,000-150,000</option>
+                <option value="300000">more than 150,000</option>
+            </select>
+        </label>
+
+        <label>
+            <span class ='addRedStar'>Zipcode:</span>
+            <input id="zipcode" type="zipcode" name="zipcode" pattern="^\d{5}$" placeholder="5 digit zip code" required>
+        </label>
+
+        <label>
+            <span>&nbsp;</span>
+            <input id="search" type="button" class="button" value="Search"/>
+        </label>
+    </form>
+
+</div>
+
+
+<div id="right1">
+    <canvas id="myChart" width="500" height="250"></canvas>
+    <div class="num"><h1>Predict Price:</h1></div>
+    <div class="txt"><h2>Max:</h2><h2>Min:</h2></div>
+    <div class="txt"><h2 id="maxoutput"></h2><h2 id="minoutput"></h2></div>
+</div>
+
+<div id="right2" style="overflow-y: scroll;">
+    <h1 id="searchmm">Search Result</h1>
+
+ <table id="keywords" border="1" cellspacing="0" cellpadding="0">
+     <thead id="test1">
+     <tr>
+         <th><span>Price</span></th>
+         <th><span>Year</span></th>
+         <th><span>Mileage</span></th>
+         <th><span>Color</span></th>
+         <th><span>MPG</span></th>
+         <th><span>Distance(Miles)</span></th>
+         <th><span>Seller Name</span></th>
+         <th><span>Seller Rate</span></th>
+         <th><span>Updated Time</span></th>
+     </tr>
+     </thead>
+     <tbody id="test">
+     </tbody>
+ </table>
+
+</div>
+
+
+<script>
+
+    (function() {
+        // We must use JS as we need to select previous
+        // elements which can't be done with CSS.
+        $('.skew-title').children('span').hover((function() {
+            var $el, n;
+            $el = $(this);
+            n = $el.index() + 1;
+            $el.addClass('flat');
+            if (n % 2 === 0) {
+                return $el.prev().addClass('flat');
+            } else {
+                if (!$el.hasClass('last')) {
+                    return $el.next().addClass('flat');
+                }
+            }
+        }), function() {
+            return $('.flat').removeClass('flat');
+        });
+
+    }).call(this);
+
+
+    function get_time(){
+        $.ajax({
+            url:"/time",
+            timeout:10000,
+            success: function(data){
+                $("#time").html(data)
+            },
+            error:function(xhr,type,errorThrown){
+            }
+        });
+    }
+
+        function get_updated(){
+        $.ajax({
+            url:"/get_updated",
+            timeout:50000,
+            success: function(data){
+                var str1 = "Last 5 Minutes:  ";
+                var str2 = "   Cars Updated";
+                s = str1+data+str2;
+                $("#updated").text(s)
+            },
+            error:function(xhr,type,errorThrown){
+            }
+        });
+    }
+
+    // 根据Make动态获取model
+    $("#makeid").change(function get_model() {
+        var make = $("#makeid").val();
+        data = {
+            make: make
+        };
+        $.ajax({
+            url: "http://127.0.0.1:5000/get_model",
+            type: "POST",
+            data: JSON.stringify(data),
+            contentType: "application/json; charset=UTF-8",
+            success: function (data) {
+                if (data) {
+                    $("#modelid").empty()
+                    //$('<option selected="" value="0">All Models</option>').appendTo("#modelid");
+                    for (i = 0; i < data.length; i++) {
+                        $("<option value='" + data[i] + "'>" + data[i] + "</option>").appendTo("#modelid");
+                    }
+                }
+                else {
+                    alert('error');
+                }
+            },
+            error: function () {
+                alert("get models failed.")
+            }
+        })
+    });
+
+
+    // 从前台拿到预测需要的信息传给后台
+    $("#predict").click(function () {
+        var pltime = $("#pltime").val();
+        var pm = $("#pm").val();
+        var color = $("#colorid").val();
+        var make = $("#makeid").val();
+        var model = $("#modelid").val();
+        var fueltype = $("#fueltype").val();
+        var drivetrain = $("#drivetrain").val();
+        var transmission = $("#transmission").val();
+        $.ajax({
+            url: "http://127.0.0.1:5000/send_predict_message",
+            type: "GET",
+            data: {
+                pltime: pltime,
+                pm: pm,
+                color: color,
+                make: make,
+                model: model,
+                fueltype: fueltype,
+                drivetrain: drivetrain,
+                transmission: transmission
+            },
+            success: function (data) {
+                alert(data)
+            },
+            error: function () {
+                alert("sent predict message failed.")
+            }
+        })
+    });
+
+
+    // 从前台拿到查找需要的信息传给后台
+    $("#search").click(function () {
+        var zipcode = $("#zipcode").val();
+        var minyear = $("#minsyear").val();
+        var maxyear = $("#maxsyear").val();
+        var pricemax = $("#priceMax").val();
+        var distance = $("#radius").val();
+        var searchMileage = $("#sm").val();
+
+        var color = $("#colorid").val();
+        var make = $("#makeid").val();
+        var model = $("#modelid").val();
+        var fueltype = $("#fueltype").val();
+        var drivetrain = $("#drivetrain").val();
+        var transmission = $("#transmission").val();
+        $.ajax({
+            url: "http://127.0.0.1:5000/send_search_message",
+            type: "GET",
+            data: {
+                zipcode: zipcode,
+                minyear: minyear,
+                maxyear: maxyear,
+                pricemax: pricemax,
+                distance: distance,
+                searchMileage: searchMileage,
+
+                color: color,
+                make: make,
+                model: model,
+                fueltype: fueltype,
+                drivetrain: drivetrain,
+                transmission: transmission
+            },
+            success: function (data) {
+                alert(data)
+            },
+            error: function () {
+                alert("sent search message failed.")
+            }
+        })
+    });
+
+    // 从后台拿到预测价格显示到网页并输出折线图
+    $("#predict").click(function get_pdata() {
+
+        $.ajax({
+            url: "/getpredictprice",
+            success: function (data) {
+                $("#maxoutput").text(data["2021"][1])
+                $("#minoutput").text(data["2021"][0])
+                /*如果是别的带Key的 data.message
+                * message_json = {"message": message_get}*/
+                var chartdata = {
+                    labels: ["2021", "2022", "2023", "2024", "2025"],
+                    datasets: [{
+                        label: "Predict Max Price",
+                        fillColor: "rgba(174,204,242,0.4)",
+                        strokeColor: "rgba(220,220,220,1)",
+                        pointColor: "rgba(174,204,242,1)",
+                        pointStrokeColor: "#fff",
+                        pointHighlightFill: "#fff",
+                        pointHighlightStroke: "rgba(220,220,220,1)",
+                        data: [data["2021"][1],data["2022"][1],data["2023"][1],data["2024"][1],data["2025"][1]]
+                    },
+                        {
+                        label: "Predict Min Price",
+                        fillColor: "rgba(174,204,242,0.4)",
+                        strokeColor: "rgba(220,220,220,1)",
+                        pointColor: "rgba(174,204,242,1)",
+                        pointStrokeColor: "#fff",
+                        pointHighlightFill: "#fff",
+                        pointHighlightStroke: "rgba(220,220,220,1)",
+                        data: [data["2021"][0],data["2022"][0],data["2023"][0],data["2024"][0],data["2025"][0]]
+                    }
+
+                    ]
+                };
+                var options = {}; // 图表配置项，可以留空来使用默认的配置
+                var myChart = $("#myChart").lineChart(chartdata, options);
+            },
+            error: function (xhr, type, errorThrown) {
+            }
+        });
+    })
+
+
+    // 从后台拿到查询结果到前台展示成表格
+    $("#search").click(function get_sdata() {
+        $.ajax({
+            url: "/get_search_result",
+            contentType: "application/json; charset=UTF-8",
+            success: function (data){
+                var jsonData = JSON.stringify(data);// 转成JSON格式
+                var result = $.parseJSON(jsonData);// 转成JSON对象
+                var str1 = "";
+                //清空table中的html
+                /*$("#right2 h1").text(result[1].Make)*/
+
+                //$("#test1").html("");
+                $("#test").html("");
+
+                /*var str2 = "";
+                str2 = "<tr><th><span>Price</span></th>" +
+                    "<th><span>Year</span></th>" +
+                    "<th><span>Mileage</span></th>" +
+                    "<th><span>Color</span></th>" +
+                    "<th><span>MPG</span></th>" +
+                    "<th><span>Distance(Miles)</span></th>" +
+                    "<th><span>Seller Name</span></th>" +
+                    "<th><span>Seller Rate</span></th></tr>";
+                $("#test1").append(str2);*/
+                var str2 = "";
+                str2 =" ago";
+
+                for (var i = 0; i < result.length; i++) {
+                    var str3 ="";
+                    str3 =  (result[i].update_history)+str2;
+                    str1 = "<tr>" +
+                        "<td>" + result[i].price + "</td>" +
+                        "<td>" + result[i].year + "</td>" +
+                            "<td>" + result[i].odometer + "</td>" +
+                            "<td>" + result[i].Exterior_Color+ "</td>" +
+                             "<td>" + result[i].City_MPG + "</td>" +
+                             "<td>" + (result[i].distance).toFixed(2)+ "</td>" +
+                            "<td>" + (result[i].seller_name).replace(/Sold by/i,"") + "</td>" +
+                            "<td>" + (result[i].seller_rateing)/10 + "</td>" +
+                            "<td>" + str3+"</td>" +
+                        "</tr>";
+                    $("#test").append(str1);
+                }
+                var search = "Search Result: "
+                var make = $("#makeid").val();
+                var model = $("#modelid").val();
+                var space = "     ";
+                s = search+make+space+model;
+                $("#searchmm").text(s);
+                $("#keywords").trigger("update");
+            },
+
+            error:  function () {
+                alert("Can not find results, please try again.")
+            }
+        });
+    });
+
+
+
+    setInterval(get_time,1000);
+    setInterval(get_updated,1000*60*5)
+
+</script>
+</body>
+<script src="../static/js/stopExecutionOnTimeout.js"></script>
+<script src='../static/js/jquery.tablesorter.min.js'></script>
+</html>
